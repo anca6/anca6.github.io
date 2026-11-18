@@ -32,7 +32,15 @@
 }
 
 .project-info h3 {
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
   margin: 0 0 0.5rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-info p {

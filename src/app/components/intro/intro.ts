@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { ThreeScene } from '../three-scene/three-scene';
 
 @Component({
-  imports: [],
+  imports: [ThreeScene],
   selector: 'app-intro',
   styleUrl: './intro.scss',
   templateUrl: './intro.html',

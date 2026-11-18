@@ -1,15 +1,21 @@
 main > section {
   min-height: 50vh;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  scroll-margin-top: 5rem;
 }
 
 #intro {
-  min-height: 100svh;
+  min-height: calc(100svh - 80px);
   display: flex;
   align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0; 
 }
 
 #intro app-intro {
+  display: block;
   width: 100%;
 }
 
@@ -17,5 +23,18 @@ main > section {
 #experience,
 #about,
 #contact {
-  scroll-margin-top: 4rem;
+  width: 100%;
 }
+
+@media (max-width: 900px) {
+  #intro {
+    min-height: 65svh;
+  }
+}
+
+@media (max-width: 600px) {
+  #intro {
+    min-height: 55svh;
+  }
+}
+
