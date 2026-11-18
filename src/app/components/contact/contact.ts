@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { SOCIAL_LINKS } from '../../data/contact';
 
 @Component({
-  imports: [],
   selector: 'app-contact',
-  styleUrl: './contact.scss',
+  imports: [],
   templateUrl: './contact.html',
+  styleUrl: './contact.scss'
 })
-export class Contact {}
+export class Contact {
+  readonly socialLinks = SOCIAL_LINKS;
+}

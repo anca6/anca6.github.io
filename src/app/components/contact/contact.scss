@@ -1,0 +1,46 @@
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.contact-container p {
+  line-height: 1.6;
+}
+
+.email-link {
+  display: inline-block;
+  margin: 1.5rem 0;
+}
+
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #777;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+

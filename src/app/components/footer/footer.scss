@@ -1,0 +1,23 @@
+.site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  border-top: 1px solid #555;
+
+  a {
+    color: inherit;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,1 +1,28 @@
-<h2>Contact</h2>
+
+<div class="contact-container">
+  <h2>Contact</h2>
+
+  <p>
+    Interested in working together or have a question?
+    Feel free to connect with me.
+  </p>
+
+  <div class="contact-links">
+    @for (link of socialLinks; track link.name) {
+      @if (link.url) {
+        <a
+          [href]="link.url"
+          [attr.aria-label]="link.name + ' profile (opens in a new tab)'"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            [src]="link.icon"
+            alt=""
+            class="social-icon"
+          />
+        </a>
+      }
+    }
+  </div>
+</div>
