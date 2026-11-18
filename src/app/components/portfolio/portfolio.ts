@@ -1,14 +1,16 @@
 import { Component, computed, signal } from '@angular/core';
 
 import { ProjectCard } from '../project-card/project-card';
+import { ProjectDetail } from '../project-detail/project-detail';
+
 import { PROJECTS } from '../../data/projects';
-import { ProjectCategory } from '../../models/project.model';
+import { Project, ProjectCategory } from '../../models/project.model';
 
 type PortfolioFilter = 'All' | ProjectCategory;
 
 @Component({
   selector: 'app-portfolio',
-  imports: [ProjectCard],
+  imports: [ProjectCard, ProjectDetail],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss'
 })
@@ -26,6 +28,7 @@ export class Portfolio {
   ];
 
   readonly selectedCategory = signal<PortfolioFilter>('All');
+  readonly selectedProject = signal<Project | null>(null);
 
   readonly filteredProjects = computed(() => {
     const category = this.selectedCategory();
@@ -41,5 +44,13 @@ export class Portfolio {
 
   selectCategory(category: PortfolioFilter): void {
     this.selectedCategory.set(category);
+  }
+
+  openProject(project: Project): void{
+    this.selectedProject.set(project);
+  }
+
+  closeProject(): void {
+    this.selectedProject.set(null);
   }
 }

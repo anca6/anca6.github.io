@@ -1,4 +1,9 @@
-<article class="project-card">
+<button
+  type="button"
+  class="project-card"
+  (click)="selectProject()"
+  [attr.aria-label]="'View details for ' + project().title"
+>
   <div class="project-image">
     @if (!imageFailed()) {
       <img
@@ -23,4 +28,4 @@
       }
     </div>
   </div>
-</article>
+</button>

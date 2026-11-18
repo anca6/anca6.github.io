@@ -1,0 +1,113 @@
+<dialog
+  #dialog
+  class="experience-dialog"
+  [attr.aria-labelledby]="'experience-title-' + experience().id"
+  (close)="onDialogClosed()"
+  (click)="onBackdropClick($event)"
+  (keydown)="onKeyDown($event)"
+>
+  <div class="detail-container">
+    <header class="detail-header">
+      <div>
+        <h2 [id]="'experience-title-' + experience().id">
+          {{ experience().company }}
+        </h2>
+        <h3>{{ experience().role }}</h3>
+        <p>{{ experience().period }}</p>
+
+        @if (experience().location) {
+          <p>{{ experience().location }}</p>
+        }
+      </div>
+
+      <button
+        type="button"
+        (click)="close()"
+        aria-label="Close experience details"
+        autofocus
+      >
+        Close
+      </button>
+    </header>
+
+    @if (images().length > 0) {
+      <div class="gallery">
+        <div class="gallery-image">
+          @if (!imageFailed()) {
+            <img
+              [src]="images()[imageIndex()]"
+              [alt]="experience().company + ' image ' + (imageIndex() + 1)"
+              (error)="imageFailed.set(true)"
+            />
+          } @else {
+            <p>Image unavailable</p>
+          }
+        </div>
+
+        @if (images().length > 1) {
+          <div class="gallery-controls">
+            <button type="button" (click)="previousImage()">
+              Previous
+            </button>
+
+            <span>
+              {{ imageIndex() + 1 }} / {{ images().length }}
+            </span>
+
+            <button type="button" (click)="nextImage()">
+              Next
+            </button>
+          </div>
+
+          <div class="gallery-thumbnails">
+            @for (image of images(); track $index) {
+              <button
+                type="button"
+                class="thumbnail"
+                [class.active]="imageIndex() === $index"
+                [attr.aria-label]="'Show image ' + ($index + 1)"
+                [attr.aria-pressed]="imageIndex() === $index"
+                (click)="selectImage($index)"
+              >
+                <img [src]="image" [alt]="'Thumbnail ' + ($index + 1)" />
+              </button>
+            }
+          </div>
+        }
+      </div>
+    }
+
+    <section class="detail-content">
+      <h3>Overview</h3>
+      <p>{{ experience().description }}</p>
+
+      @if (experience().responsibilities?.length) {
+        <h3>Responsibilities</h3>
+        <ul>
+          @for (responsibility of experience().responsibilities; track $index) {
+            <li>{{ responsibility }}</li>
+          }
+        </ul>
+      }
+
+      @if (experience().technologies?.length) {
+        <h3>Technologies</h3>
+        <div class="technologies">
+          @for (technology of experience().technologies; track technology) {
+            <span>{{ technology }}</span>
+          }
+        </div>
+      }
+
+      @if (experience().websiteUrl) {
+        <a
+          [href]="experience().websiteUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit website
+        </a>
+      }
+    </section>
+  </div>
+</dialog>

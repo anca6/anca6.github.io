@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { ABOUT_DATA } from '../../data/about';
 
 @Component({
-  imports: [],
   selector: 'app-about',
-  styleUrl: './about.scss',
+  imports: [],
   templateUrl: './about.html',
+  styleUrl: './about.scss'
 })
-export class About {}
+export class About {
+  readonly about = ABOUT_DATA;
+}

@@ -1,3 +1,4 @@
+
 <div class="portfolio-container">
   <h2>Portfolio</h2>
 
@@ -16,9 +17,23 @@
 
   <div class="projects-grid">
     @for (project of filteredProjects(); track project.id) {
-      <app-project-card [project]="project" />
+      <app-project-card
+        [project]="project"
+        (selected)="openProject($event)"
+      />
     } @empty {
       <p>No projects found in this category.</p>
     }
   </div>
 </div>
+
+
+@if (selectedProject(); as project) {
+  <app-project-detail
+    [project]="project"
+    [projects]="filteredProjects()"
+    (projectChanged)="openProject($event)"
+    (closed)="closeProject()"
+  />
+}
+

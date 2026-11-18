@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -10,4 +10,10 @@ import { Project } from '../../models/project.model';
 export class ProjectCard {
   readonly project = input.required<Project>();
   readonly imageFailed = signal(false);
+
+  readonly selected = output<Project>();
+
+  selectProject(): void{
+    this.selected.emit(this.project());
+  }
 }
