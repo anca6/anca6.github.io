@@ -4,28 +4,55 @@
   (click)="selectProject()"
   [attr.aria-label]="'View details for ' + project().title"
 >
-  <div class="project-image">
+  <span class="project-image">
     @if (!imageFailed()) {
       <img
         [src]="project().image"
         [alt]="project().title"
+        loading="lazy"
         (error)="imageFailed.set(true)"
       />
     } @else {
-      <span>Image coming soon</span>
+      <span class="image-placeholder">
+        Image coming soon
+      </span>
     }
-  </div>
+  </span>
 
-  <div class="project-info">
-    <h3>{{ project().title }}</h3>
-    <p>{{ project().subtitle }}</p>
+  <span class="project-info">
+    <span class="project-title">
+      {{ project().title }}
+    </span>
 
-    <div class="technologies">
+    <span class="project-subtitle">
+      {{ project().subtitle }}
+    </span>
+
+    <span class="technologies">
       @for (technology of project().technologies; track technology) {
         <span class="technology-tag">
           {{ technology }}
         </span>
       }
-    </div>
-  </div>
+    </span>
+
+    <span class="project-action">
+      View project
+
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 17 17 7" />
+        <path d="M7 7h10v10" />
+      </svg>
+    </span>
+  </span>
 </button>

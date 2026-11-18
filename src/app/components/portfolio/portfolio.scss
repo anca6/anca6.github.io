@@ -1,44 +1,91 @@
 .portfolio-container {
+  text-align: center;
+  color: var(--color-highlight);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  letter-spacing: 0.002em;
+
 }
 
 .filters {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1.5rem 0;
 }
 
 .filters button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #777;
-  border-radius: 20px;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
+  padding: 0.6rem 1.25rem;
 
-.filters button.active {
-  background: #555;
-  color: white;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  border: 1.25px solid var(--color-border);
+  border-radius: 30px;
+
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover:not(.active) {
+    border-color: var(--color-accent-secondary);
+    color: var(--color-accent-secondary);
+  }
+
+  &.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 3px;
+  }
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1.75rem;
+  align-items: stretch;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
+
+// @media (max-width: 900px) {
+//   .projects-grid {
+//     grid-template-columns: repeat(2, minmax(0, 1fr));
+//   }
+// }
+
+// @media (max-width: 600px) {
+//   .projects-grid {
+//     grid-template-columns: 1fr;
+//   }
+// }

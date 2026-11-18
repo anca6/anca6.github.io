@@ -47,28 +47,49 @@ h1 {
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.5;
-    color: var(--color-accent);
+    color: #A8B4EE;
     margin: 0;
 }
 
 .explore-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 
-    font-family: var(--font-heading);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--color-accent-secondary);
-    text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent-secondary);
+  text-decoration: none;
 
-    transition: color 0.2s ease;
+  transition: color 0.25s ease;
 
-    &:hover {
-        color: var(--color-highlight);
+  .explore-arrow {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-highlight);
+
+    .explore-arrow {
+      transform: translateY(4px);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-arrow {
+    transition: none;
+  }
+
+  .explore-link:hover .explore-arrow,
+  .explore-link:focus-visible .explore-arrow {
+    transform: none;
+  }
 }
 
 @media (max-width: 900px) {

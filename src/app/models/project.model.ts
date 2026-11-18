@@ -1,10 +1,11 @@
 export type ProjectCategory =
   | 'C#'
   | 'Unity'
+  | 'C++'
   | 'Mobile'
   | 'Web Dev'
   | 'Tools'
-  | 'Game Jams';
+  | 'Game Jam';
 
 export interface ProjectSection {
   heading: string;

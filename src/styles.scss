@@ -19,9 +19,25 @@
   --color-text-muted: #c8c0cb;
   --color-border: #4a3650;
 
+  --header-height: 64px;
+
   // Typography
   --font-heading: 'Open Sauce Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  // Card and panel surfaces
+--color-card: #051E26;
+--color-card-hover: #0b2933;
+--color-card-border: #29424d;
+--color-panel: #0a222c;
+
+// Technology tags
+--color-tag-bg: #182f42;
+--color-tag-text: #b9c1ec;
+
+// Shared layout
+--radius-card: 10px;
+--radius-button: 20px;
 }
 
 html {

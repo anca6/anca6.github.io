@@ -21,10 +21,11 @@ export class Portfolio {
     'All',
     'C#',
     'Unity',
+    'C++',
     'Mobile',
     'Web Dev',
     'Tools',
-    'Game Jams'
+    'Game Jam'
   ];
 
   readonly selectedCategory = signal<PortfolioFilter>('All');

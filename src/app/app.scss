@@ -1,12 +1,10 @@
 main > section {
   min-height: 50vh;
   padding: 4rem 2rem;
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--header-height);
 }
-
 #intro {
-  min-height: calc(100svh - 80px);
-  display: flex;
+min-height: calc(100svh - var(--header-height));  display: flex;
   align-items: center;
   position: relative;
   width: 100%;
