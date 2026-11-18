@@ -1,0 +1,21 @@
+main > section {
+  min-height: 50vh;
+  padding: 2rem;
+}
+
+#intro {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+#intro app-intro {
+  width: 100%;
+}
+
+#portfolio,
+#experience,
+#about,
+#contact {
+  scroll-margin-top: 4rem;
+}

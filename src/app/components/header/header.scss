@@ -1,0 +1,25 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #24242a;
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
