@@ -36,3 +36,8 @@ min-height: calc(100svh - var(--header-height));  display: flex;
   }
 }
 
+#contact {
+  min-height: auto;
+  padding: 4rem 2rem 5rem;
+}
+

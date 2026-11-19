@@ -3,17 +3,59 @@
   class="experience-card"
   (click)="selectExperience()"
 >
-  <div class="experience-image">
-    @if (experience().image; as image) {
-      <img [src]="image" [alt]="experience().company" />
+  <span class="experience-image">
+    @if (experience().image && !imageFailed()) {
+      <img
+        [src]="experience().image"
+        [alt]="experience().company"
+        loading="lazy"
+        (error)="imageFailed.set(true)"
+      />
     } @else {
-      <span>{{ experience().company }}</span>
+      <span class="image-placeholder">
+        {{ experience().company }}
+      </span>
     }
-  </div>
+  </span>
 
-  <div class="experience-info">
-    <h3>{{ experience().company }}</h3>
-    <p>{{ experience().role }}</p>
-    <span>{{ experience().period }}</span>
-  </div>
+  <span class="experience-info">
+
+    <span class="experience-title">
+      {{ experience().company }}
+    </span>
+
+    <span class="experience-subtitle">
+      {{ experience().role }}
+    </span>
+
+    <span class="experience-date">
+      {{ experience().period }}
+    </span>
+
+    <span class="technologies">
+      <span class="technology-tag">
+        {{ experience().category }}
+      </span>
+    </span>
+
+    <span class="experience-action">
+      View experience
+
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 17 17 7" />
+        <path d="M7 7h10v10" />
+      </svg>
+    </span>
+
+  </span>
 </button>

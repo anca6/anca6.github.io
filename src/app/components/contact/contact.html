@@ -1,28 +1,39 @@
-
 <div class="contact-container">
-  <h2>Contact</h2>
+  <h2>CONTACT</h2>
 
-  <p>
-    Interested in working together or have a question?
-    Feel free to connect with me.
-  </p>
+  <div class="contact-content">
+    <h3>Let's connect!</h3>
 
-  <div class="contact-links">
-    @for (link of socialLinks; track link.name) {
-      @if (link.url) {
-        <a
-          [href]="link.url"
-          [attr.aria-label]="link.name + ' profile (opens in a new tab)'"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            [src]="link.icon"
-            alt=""
-            class="social-icon"
-          />
-        </a>
-      }
-    }
+    <div class="contact-links">
+
+      <a
+        class="contact-link"
+        href="https://www.linkedin.com/in/anca-gabriela-custura-a7615126a/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="icons/linkedin-svgrepo-com.svg"
+          alt=""
+          class="contact-icon"
+        />
+        <span>LinkedIn</span>
+      </a>
+
+      <a
+        class="contact-link"
+        href="https://github.com/anca6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="icons/github-svgrepo-com.svg"
+          alt=""
+          class="contact-icon"
+        />
+        <span>GitHub</span>
+      </a>
+
+    </div>
   </div>
 </div>

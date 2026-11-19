@@ -1,40 +1,178 @@
+:host {
+  display: block;
+  height: 100%;
+  min-width: 0;
+}
+
 .experience-card {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   height: 100%;
-  display: block;
+  padding: 0;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-card);
+
+  color: var(--color-text);
   text-align: left;
   font: inherit;
-  color: inherit;
-  background: transparent;
-  border: 1px solid #555;
-  border-radius: 8px;
+
   overflow: hidden;
   cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    background: var(--color-card-hover);
+    border-color: var(--color-accent);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
 }
 
 .experience-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #303030;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+
+  background: var(--color-panel);
+  overflow: hidden;
 
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    transition: transform 0.4s ease;
   }
 }
 
-.experience-info {
-  padding: 1rem;
+.experience-card:hover .experience-image img {
+  transform: scale(1.035);
+}
 
-  h3 {
-    margin: 0 0 0.5rem;
+.image-placeholder {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.experience-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  width: 100%;
+  padding: 1.5rem;
+  min-width: 0;
+
+  container-type: inline-size;
+}
+
+.experience-title {
+  display: block;
+
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 5.5cqi, 1.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-bottom: 0.5rem;
+}
+
+.experience-subtitle {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.experience-date {
+  display: block;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.technology-tag {
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+}
+
+.experience-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-card-border);
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-accent-secondary);
+
+  svg {
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+}
+
+.experience-card:hover .experience-action svg {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 650px) {
+  .experience-info {
+    padding: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card,
+  .experience-image img,
+  .experience-action svg {
+    transition: none;
   }
 
-  p {
-    margin: 0 0 0.5rem;
+  .experience-card:hover,
+  .experience-card:hover .experience-image img,
+  .experience-card:hover .experience-action svg {
+    transform: none;
   }
 }

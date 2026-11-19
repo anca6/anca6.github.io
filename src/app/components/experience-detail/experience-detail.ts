@@ -27,15 +27,9 @@ export class ExperienceDetail implements AfterViewInit {
   readonly imageIndex = signal(0);
   readonly imageFailed = signal(false);
 
-  readonly images = computed(() => {
-    const experience = this.experience();
-
-    return experience.gallery?.length
-      ? experience.gallery
-      : experience.image
-        ? [experience.image]
-        : [];
-  });
+ readonly images = computed(() => {
+  return this.experience().gallery ?? [];
+});
 
   ngAfterViewInit(): void {
     this.dialog().nativeElement.showModal();

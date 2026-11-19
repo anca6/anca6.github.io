@@ -10,8 +10,8 @@ export const PROJECTS: Project[] = [
 
 Includes a custom benchmarking system, runtime scene generation, performance monitoring, and CSV data export. Reduced draw calls from approximately 10,001 to 4 using static batching and to 7 using GPU instancing in a controlled 10,000-object benchmark.`,
 
-    image: '',
-    gallery: [],
+    image: 'images/projects/FrameTime3.png',
+    gallery: ['images/projects/FrameTime3.png', 'images/projects/FrameTime1.png', 'images/projects/FrameTime2.png'],
 
     categories: ['Web Dev', 'Tools'],
     technologies: [
@@ -21,7 +21,7 @@ Includes a custom benchmarking system, runtime scene generation, performance mon
       'Performance Optimisation'
     ],
 
-    githubUrl: 'https://github.com/anca6/playcanvas-render-optimiser'
+    githubUrl: 'https://github.com/anca6/playcanvas-render-optimiser/wiki/Analysis'
   },
 
   {
@@ -47,52 +47,28 @@ Includes custom Unity Editor tools, URP post-processing stack, and runtime regen
     githubUrl: 'https://github.com/anca6/cyberpunk-procedural-city'
   },
 
-  {
-    id: 'woodland-dash',
-    title: 'Woodland Dash',
-    subtitle: 'Local Multiplayer Racing Game',
+  //   {
+  //     id: 'woodland-dash',
+  //     title: 'Woodland Dash',
+  //     subtitle: 'Local Multiplayer Racing Game',
 
-    description: `Local multiplayer 3D racing game built in Unity (C#) featuring split-screen gameplay, character ability systems, and environment interactions.
+  //     description: `Local multiplayer 3D racing game built in Unity (C#) featuring split-screen gameplay, character ability systems, and environment interactions.
 
-Includes controller input handling, custom shaders (water, wind, skybox), and URP-based VFX for dynamic lighting and particle effects.`,
+  // Includes controller input handling, custom shaders (water, wind, skybox), and URP-based VFX for dynamic lighting and particle effects.`,
 
-    image: '',
-    gallery: [],
+  //     image: 'images/projects/woodland-dash.png',
+  //     gallery: [],
 
-    categories: ['C#', 'Unity'],
-    technologies: [
-      'Unity',
-      'C#',
-      'Local Multiplayer',
-      'Input System',
-    ],
+  //     categories: ['C#', 'Unity'],
+  //     technologies: [
+  //       'Unity',
+  //       'C#',
+  //       'Local Multiplayer',
+  //       'Input System',
+  //     ],
 
-    githubUrl: 'https://github.com/anca6/woodland-dash'
-  },
-
-  {
-    id: 'collider-performance-evaluation',
-    title: 'Collider Performance Evaluation',
-    subtitle: 'Physics & Performance Analysis Tool',
-
-    description: `Physics evaluation tool in Unity (C#) designed to analyze and visualize collision events for accurate physical interaction testing.
-
-Implements runtime collision detection, impact data logging, and custom editor visualisation tools to assist in fine-tuning object physics and hit registration systems.`,
-
-    image: '',
-    gallery: [],
-
-    categories: ['C#', 'Unity', 'Tools'],
-    technologies: [
-      'Unity',
-      'C#',
-      'Physics',
-      'Performance Analysis',
-      'Editor Tools'
-    ],
-
-    githubUrl: 'https://github.com/anca6/advanced-tools-collision-eval'
-  },
+  //     githubUrl: 'https://github.com/anca6/woodland-dash'
+  //   },
 
   {
     id: 'shader-programming',
@@ -105,7 +81,7 @@ Explored the OpenGL rendering pipeline through procedural texture generation, tr
 
 Concluded with a terrain rendering demo leveraging vertex displacement and multi-layer texturing via height and splat maps.`,
 
-    image: '',
+    image: 'images/projects/glsl.gif',
     gallery: [],
 
     categories: ['C++'],
@@ -129,7 +105,7 @@ Concluded with a terrain rendering demo leveraging vertex displacement and multi
 
 Includes configurable board dimensions and win conditions, move history and undo functionality, multidirectional win detection, and animated 3D disc placement.`,
 
-    image: '',
+    image: 'images/projects/connect-4.png',
     gallery: [],
 
     categories: ['C#', 'Unity'],
@@ -153,7 +129,7 @@ Includes configurable board dimensions and win conditions, move history and undo
 
 Implements live location systems, inventory and growth management, and a three-stage plant evolution system rendered in AR environments.`,
 
-    image: '',
+    image: 'images/projects/mg.png',
     gallery: [],
 
     categories: ['C#', 'Unity', 'Mobile'],
@@ -178,8 +154,8 @@ Implements live location systems, inventory and growth management, and a three-s
 
 Implements player movement and camera control, scene and quest management, and an NPC dialogue-driven task system for narrative progression.`,
 
-    image: '',
-    gallery: [],
+    image: 'images/projects/culture-whispers.png',
+    gallery: ['images/projects/culture-whispers.png'],
 
     categories: ['C#', 'Unity'],
     technologies: [
@@ -194,6 +170,29 @@ Implements player movement and camera control, scene and quest management, and a
   },
 
   {
+    id: 'collider-performance-evaluation',
+    title: 'Collider Performance Evaluation',
+    subtitle: 'Physics & Performance Analysis Tool',
+
+    description: `Physics evaluation tool in Unity (C#) designed to analyze and visualize collision events for accurate physical interaction testing.
+
+Implements runtime collision detection, impact data logging, and custom editor visualisation tools to assist in fine-tuning object physics and hit registration systems.`,
+
+    image: 'images/projects/rotating_knot.gif',
+    gallery: ['images/projects/adv1.png', 'images/projects/adv2.png'],
+
+    categories: ['C#', 'Unity', 'Tools'],
+    technologies: [
+      'Unity',
+      'C#',
+      'Physics',
+      'Performance Analysis',
+    ],
+
+    githubUrl: 'https://github.com/anca6/advanced-tools-collision-eval/wiki/Collision-Detection-Evaluation-Report'
+  },
+
+  {
     id: 'game-jam-2025',
     title: 'Game Jam 2025',
     subtitle: 'ArtEZ MediaMusic / Saxion CMGT',
@@ -202,8 +201,8 @@ Implements player movement and camera control, scene and quest management, and a
 
 This project was a great opportunity to step outside the usual game development bubble and learn how sound design and music production shape player experience, which really broadened my perspective on creative collaboration.`,
 
-    image: '',
-    gallery: [],
+    image: 'images/projects/image07.jpg',
+    gallery: ['images/projects/image07.jpg'],
 
     categories: ['C#', 'Unity', 'Game Jam'],
     technologies: [
